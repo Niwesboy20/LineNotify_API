@@ -19,7 +19,9 @@ public class LineNotify {
 			
 			HttpURLConnection connection = (HttpURLConnection)url.openConnection();
 			// Token 
-			connection.addRequestProperty("Authorization",  "Bearer " + "8O7MNmSKCJbYzKoB97N1TXHXQWeqL7Ap6eUPw697dfE");
+			String tokenLine = "";
+			
+			connection.addRequestProperty("Authorization",  "Bearer " + tokenLine);
 			connection.setRequestMethod( "POST" );
 			connection.addRequestProperty( "Content-Type", "application/x-www-form-urlencoded" );
 			connection.setDoOutput( true );
