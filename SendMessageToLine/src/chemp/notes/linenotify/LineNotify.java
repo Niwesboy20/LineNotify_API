@@ -9,10 +9,10 @@ public class LineNotify {
 	// URL API LINE
 	private String strEndpoint = "https://notify-api.line.me/api/notify";
 
-	public void  callEvent(String message) {
+	public void  callEvent(String text) {
    		try {
    			
-			message = URLEncoder.encode(message, "UTF-8");
+   			text = URLEncoder.encode(text, "UTF-8");
 			String strUrl = strEndpoint;
 			
 			URL url = new URL( strUrl );
@@ -24,7 +24,7 @@ public class LineNotify {
 			connection.addRequestProperty( "Content-Type", "application/x-www-form-urlencoded" );
 			connection.setDoOutput( true );
 			// pattern message + text........!
-			String parameterString = "message=" + message;
+			String parameterString = "message=" + text;
 			
 			PrintWriter printWriter = new PrintWriter(connection.getOutputStream());
 			printWriter.print(parameterString);
